@@ -26,7 +26,7 @@ func _process(delta):
 		
 		# Move all pipes
 		for pipe in get_children():
-			if pipe is Node2D:
+			if pipe is Node2D and pipe.name != "PipeSpawner":
 				pipe.global_position.x -= pipe_speed * delta
 				
 				# Remove pipes that went off screen
@@ -35,7 +35,7 @@ func _process(delta):
 else:
 	# Clear pipes in menu
 	for pipe in get_children():
-		if pipe is Node2D and pipe != game_manager.bird:
+		if pipe is Node2D and pipe.name != "PipeSpawner":
 			pipe.queue_free()
 
 func spawn_pipe():

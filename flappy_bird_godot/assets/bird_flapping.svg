@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .bird-body { fill: #FFD700; }
+      .bird-eye { fill: #000000; }
+      .bird-beak { fill: #FF8C00; }
+      .bird-wing { fill: #FFA500; }
+    </style>
+  </defs>
+  <!-- Body -->
+  <circle cx="16" cy="16" r="10" class="bird-body"/>
+  <!-- Wing (flapping up) -->
+  <ellipse cx="20" cy="10" rx="8" ry="5" class="bird-wing" transform="rotate(-30 20 10)"/>
+  <!-- Eye -->
+  <circle cx="18" cy="14" r="2" class="bird-eye"/>
+  <!-- Pupil -->
+  <circle cx="18.5" cy="13.5" r="1" fill="#FFFFFF"/>
+  <!-- Beak -->
+  <polygon points="24,15 28,14 24,16" class="bird-beak"/>
+  <!-- Tail -->
+  <path d="M 6 18 Q -2 18 0 22" stroke="#FFA500" stroke-width="2" fill="none"/>
+</svg>

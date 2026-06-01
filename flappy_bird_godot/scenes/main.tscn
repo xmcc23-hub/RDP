@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnvl1kl2pq3d0b4e"]
+
+[ext_resource type="Script" path="res://scenes/game_manager.gd"]
+[ext_resource type="PackedScene" uid="uid://dvr8e2v3b4m5d6f7" path="res://scenes/bird/bird.tscn"]
+[ext_resource type="PackedScene" uid="uid://c3m4n5o6p7q8r9s0" path="res://scenes/ui/ui.tscn"]
+[ext_resource type="PackedScene" uid="uid://d1e2f3g4h5i6j7k8" path="res://scenes/audio/audio.tscn"]
+
+[node name="GameManager" type="Node"]
+script = ExtResource("res://scenes/game_manager.gd")
+
+[node name="Bird" parent="." instance=ExtResource("uid://dvr8e2v3b4m5d6f7")]
+position = Vector2(100, 300)
+
+[node name="PipeSpawner" type="Node2D" parent="."]
+script = ExtResource("res://scenes/pipes/pipe_spawner.gd")
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(200, 570)
+
+[node name="GroundCollision" type="CollisionShape2D" parent="Ground"]
+shape = RectangleShape2D.new()
+
+[node name="UIManager" parent="." instance=ExtResource("uid://c3m4n5o6p7q8r9s0")]
+
+[node name="AudioManager" parent="." instance=ExtResource("uid://d1e2f3g4h5i6j7k8")]

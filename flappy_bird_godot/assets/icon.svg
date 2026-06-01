@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <style>
+      .icon-bg { fill: #87CEEB; }
+      .bird-body { fill: #FFD700; }
+      .bird-eye { fill: #000000; }
+      .bird-beak { fill: #FF8C00; }
+      .bird-wing { fill: #FFA500; }
+    </style>
+  </defs>
+  <!-- Background -->
+  <rect width="128" height="128" class="icon-bg"/>
+  <!-- Body -->
+  <circle cx="64" cy="50" r="24" class="bird-body"/>
+  <!-- Wing -->
+  <ellipse cx="80" cy="42" rx="18" ry="12" class="bird-wing"/>
+  <!-- Eye -->
+  <circle cx="72" cy="45" r="4" class="bird-eye"/>
+  <!-- Pupil -->
+  <circle cx="73" cy="44" r="2" fill="#FFFFFF"/>
+  <!-- Beak -->
+  <polygon points="88,50 102,48 88,52" class="bird-beak"/>
+  <!-- Tail -->
+  <path d="M 44 56 Q 28 60 32 72" stroke="#FFA500" stroke-width="4" fill="none"/>
+  <!-- Pipe (simple representation) -->
+  <rect x="10" y="70" width="12" height="50" fill="#2D5016" stroke="#1B4D0E" stroke-width="1"/>
+  <rect x="106" y="70" width="12" height="50" fill="#2D5016" stroke="#1B4D0E" stroke-width="1"/>
+</svg>

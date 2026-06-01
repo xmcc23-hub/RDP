@@ -11,6 +11,15 @@ class_name UIManager
 func _ready():
 	game_over_container.hide()
 	difficulty_menu.hide()
+	
+	# Connect difficulty buttons
+	var easy_btn = menu_container.get_node("VBoxContainer/HBoxContainer/EasyButton")
+	var normal_btn = menu_container.get_node("VBoxContainer/HBoxContainer/NormalButton")
+	var hard_btn = menu_container.get_node("VBoxContainer/HBoxContainer/HardButton")
+	
+	easy_btn.pressed.connect(func(): game_manager.set_difficulty(1))
+	normal_btn.pressed.connect(func(): game_manager.set_difficulty(2))
+	hard_btn.pressed.connect(func(): game_manager.set_difficulty(3))
 
 func update_score(score: int):
 	score_label.text = "Score: %d" % score
@@ -42,7 +51,6 @@ func show_game_over(score: int, high_score: int):
 
 func draw_difficulty_menu():
 	difficulty_menu.show()
-	# Difficulty selection will be handled in main.tscn
 
 func hide_difficulty_menu():
 	difficulty_menu.hide()

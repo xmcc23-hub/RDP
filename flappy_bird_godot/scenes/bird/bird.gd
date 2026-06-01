@@ -14,9 +14,10 @@ var max_rotation = 1.2  # radians
 
 func _ready():
 	area_entered.connect(_on_area_entered)
-	body_entered.connect(_on_body_entered)
 
-	func _physics_process(delta):
+body_entered.connect(_on_body_entered)
+
+func _physics_process(delta):
 	if game_manager.game_state == "playing":
 		# Apply gravity
 		velocity.y += gravity * delta
@@ -34,13 +35,12 @@ func _ready():
 		# Check if bird fell below screen
 		if global_position.y > get_viewport_rect().size.y:
 			game_manager.on_collision()
-else:
-	# Idle animation in menu
-	animated_sprite.play("idle")
+	else:
+		# Idle animation in menu
+		animated_sprite.play("idle")
 
 func flap():
 	velocity.y = flap_strength
-
 
 func reset():
 	global_position = Vector2(100, 300)
