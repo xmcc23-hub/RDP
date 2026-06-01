@@ -1,0 +1,43 @@
+[gd_project]
+
+config_version=5
+
+_global_script_classes=[{
+"base": "Node",
+"class": &"GameManager",
+"language": &"GDScript",
+"path": "res://scenes/game_manager.gd"
+}, {
+"base": "Area2D",
+"class": &"Bird",
+"language": &"GDScript",
+"path": "res://scenes/bird/bird.gd"
+}, {
+"base": "Node2D",
+"class": &"PipeSpawner",
+"language": &"GDScript",
+"path": "res://scenes/pipes/pipe_spawner.gd"
+}, {
+"base": "Node",
+"class": &"UIManager",
+"language": &"GDScript",
+"path": "res://scenes/ui/ui_manager.gd"
+}]
+_global_script_classes_files=["res://scenes/game_manager.gd", "res://scenes/bird/bird.gd", "res://scenes/pipes/pipe_spawner.gd", "res://scenes/ui/ui_manager.gd"]
+
+[application]
+
+title="Flappy Bird Clone"
+run/main_scene="res://scenes/main.tscn"
+config/icon="res://assets/icon.png"
+
+[physics]
+
+2d/default_gravity=800
+
+[display]
+
+window/size/viewport_width=400
+window/size/viewport_height=600
+window/size/window_width_override=400
+window/size/window_height_override=600
