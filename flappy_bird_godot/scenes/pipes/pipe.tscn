@@ -1,16 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://c3m4n5o6p7q8r9s0"]
+[gd_scene load_steps=2 format=3 uid="uid://c8n9o0p1q2r3s4t5"]
 
 [ext_resource type="Script" path="res://scenes/pipes/pipe.gd"]
-[ext_resource type="Texture2D" uid="uid://d9e0f1g2h3i4j5k6" path="res://assets/pipe.png"]
 
 [node name="Pipe" type="Node2D"]
 script = ExtResource("res://scenes/pipes/pipe.gd")
 
 [node name="TopPipe" type="Sprite2D" parent="."]
-texture_filter = 1
-texture = ExtResource("uid://d9e0f1g2h3i4j5k6")
-region_enabled = true
-region_rect = Rect2(0, 0, 52, 320)
+position = Vector2(26, -160)
+scale = Vector2(2, 2)
 
 [node name="TopPipeCollision" type="StaticBody2D" parent="TopPipe"]
 
@@ -18,11 +15,9 @@ region_rect = Rect2(0, 0, 52, 320)
 shape = RectangleShape2D.new()
 
 [node name="BottomPipe" type="Sprite2D" parent="."]
-texture_filter = 1
-texture = ExtResource("uid://d9e0f1g2h3i4j5k6")
+position = Vector2(26, 160)
+scale = Vector2(2, 2)
 flip_v = true
-region_enabled = true
-region_rect = Rect2(0, 0, 52, 320)
 
 [node name="BottomPipeCollision" type="StaticBody2D" parent="BottomPipe"]
 
@@ -30,6 +25,7 @@ region_rect = Rect2(0, 0, 52, 320)
 shape = RectangleShape2D.new()
 
 [node name="ScoreArea" type="Area2D" parent="."]
+position = Vector2(26, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreArea"]
 shape = RectangleShape2D.new()

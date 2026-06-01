@@ -1,41 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvr8e2v3b4m5d6f7"]
+[gd_scene load_steps=3 format=3 uid="uid://dvr8e2v3b4m5d6f7"]
 
 [ext_resource type="Script" path="res://scenes/bird/bird.gd"]
-[ext_resource type="Texture2D" uid="uid://b7c8d9e0f1g2h3i4" path="res://assets/bird.png"]
-[ext_resource type="Texture2D" uid="uid://j5k6l7m8n9o0p1q2" path="res://assets/bird_flapping.png"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_abcde"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_1"]
 radius = 12.0
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_12345"]
-animations = [{
-"frames": [{
-"texture": ExtResource("uid://b7c8d9e0f1g2h3i4"),
-"duration": 1.0
-}, {
-"texture": ExtResource("uid://j5k6l7m8n9o0p1q2"),
-"duration": 1.0
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"texture": ExtResource("uid://b7c8d9e0f1g2h3i4"),
-"duration": 1.0
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}]
 
 [node name="Bird" type="Area2D" groups=["bird"]]
 script = ExtResource("res://scenes/bird/bird.gd")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_12345")
-animation = &"idle"
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_abcde")
+shape = SubResource("CircleShape2D_1")

@@ -1,15 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://bnvl1kl2pq3d0b4e"]
+RSRC
+uid=uid://bnvl1kl2pq3d0b4e
+
+extension=gd
+script_class=GameManager
+class_name=GameManager
+dependencies=[res://scenes/game_manager.gd]
+script=SubResource(1)
+
+[gd_scene load_steps=3 format=3 uid="uid://bnvl1kl2pq3d0b4e"]
 
 [ext_resource type="Script" path="res://scenes/game_manager.gd"]
-[ext_resource type="PackedScene" uid="uid://dvr8e2v3b4m5d6f7" path="res://scenes/bird/bird.tscn"]
-[ext_resource type="PackedScene" uid="uid://c3m4n5o6p7q8r9s0" path="res://scenes/ui/ui.tscn"]
-[ext_resource type="PackedScene" uid="uid://d1e2f3g4h5i6j7k8" path="res://scenes/audio/audio.tscn"]
+[sub_resource type="GDScript" id="1"]
+script_class = "GameManager"
+source_code = null
 
 [node name="GameManager" type="Node"]
 script = ExtResource("res://scenes/game_manager.gd")
 
-[node name="Bird" parent="." instance=ExtResource("uid://dvr8e2v3b4m5d6f7")]
+[node name="Bird" type="Area2D" parent="."]
 position = Vector2(100, 300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bird"]
+shape = CircleShape2D.new()
+
+[node name="Sprite2D" type="Sprite2D" parent="Bird"]
 
 [node name="PipeSpawner" type="Node2D" parent="."]
 
@@ -19,6 +33,109 @@ position = Vector2(200, 570)
 [node name="GroundCollision" type="CollisionShape2D" parent="Ground"]
 shape = RectangleShape2D.new()
 
-[node name="UIManager" parent="." instance=ExtResource("uid://c3m4n5o6p7q8r9s0")]
+[node name="UIManager" type="CanvasLayer" parent="."]
 
-[node name="AudioManager" parent="." instance=ExtResource("uid://d1e2f3g4h5i6j7k8")]
+[node name="VBoxContainer" type="VBoxContainer" parent="UIManager"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 110.0
+offset_bottom = 80.0
+
+[node name="ScoreLabel" type="Label" parent="UIManager/VBoxContainer"]
+text = "Score: 0"
+theme_override_font_sizes/font_size = 24
+
+[node name="HighScoreLabel" type="Label" parent="UIManager/VBoxContainer"]
+text = "High Score: 0"
+theme_override_font_sizes/font_size = 20
+
+[node name="MenuContainer" type="Control" parent="UIManager"]
+anchors_left = 0.5
+anchors_top = 0.5
+anchors_right = 0.5
+anchors_bottom = 0.5
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = 150.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIManager/MenuContainer"]
+anchors_left = 0.0
+anchors_top = 0.0
+anchors_right = 1.0
+anchors_bottom = 1.0
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="UIManager/MenuContainer/VBoxContainer"]
+text = "FLAPPY BIRD"
+theme_override_font_sizes/font_size = 48
+alignment = 1
+
+[node name="DifficultyLabel" type="Label" parent="UIManager/MenuContainer/VBoxContainer"]
+text = "SELECT DIFFICULTY"
+theme_override_font_sizes/font_size = 16
+alignment = 1
+
+[node name="EasyButton" type="Button" parent="UIManager/MenuContainer/VBoxContainer"]
+text = "EASY"
+
+[node name="NormalButton" type="Button" parent="UIManager/MenuContainer/VBoxContainer"]
+text = "NORMAL"
+
+[node name="HardButton" type="Button" parent="UIManager/MenuContainer/VBoxContainer"]
+text = "HARD"
+
+[node name="InstructionLabel" type="Label" parent="UIManager/MenuContainer/VBoxContainer"]
+text = "Press SPACE to Start"
+theme_override_font_sizes/font_size = 14
+alignment = 1
+
+[node name="GameOverContainer" type="Control" parent="UIManager"]
+anchors_left = 0.5
+anchors_top = 0.5
+anchors_right = 0.5
+anchors_bottom = 0.5
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = 150.0
+visible = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIManager/GameOverContainer"]
+anchors_left = 0.0
+anchors_top = 0.0
+anchors_right = 1.0
+anchors_bottom = 1.0
+alignment = 1
+
+[node name="GameOverLabel" type="Label" parent="UIManager/GameOverContainer/VBoxContainer"]
+text = "GAME OVER"
+theme_override_font_sizes/font_size = 48
+alignment = 1
+
+[node name="FinalScoreLabel" type="Label" parent="UIManager/GameOverContainer/VBoxContainer"]
+text = "Score: 0"
+theme_override_font_sizes/font_size = 32
+alignment = 1
+
+[node name="FinalHighScoreLabel" type="Label" parent="UIManager/GameOverContainer/VBoxContainer"]
+text = "High Score: 0"
+theme_override_font_sizes/font_size = 28
+alignment = 1
+
+[node name="RestartLabel" type="Label" parent="UIManager/GameOverContainer/VBoxContainer"]
+text = "Press SPACE to Restart"
+theme_override_font_sizes/font_size = 14
+alignment = 1
+
+[node name="AudioManager" type="Node" parent="."]
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="AudioManager"]
+volume_db = -10.0
+
+[node name="StartSound" type="AudioStreamPlayer" parent="AudioManager"]
+
+[node name="ScoreSound" type="AudioStreamPlayer" parent="AudioManager"]
+
+[node name="CollisionSound" type="AudioStreamPlayer" parent="AudioManager"]
+volume_db = -5.0

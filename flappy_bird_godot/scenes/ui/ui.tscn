@@ -8,8 +8,8 @@ script = ExtResource("res://scenes/ui/ui_manager.gd")
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 offset_left = 10.0
 offset_top = 10.0
-offset_right = 100.0
-offset_bottom = 60.0
+offset_right = 110.0
+offset_bottom = 80.0
 
 [node name="ScoreLabel" type="Label" parent="VBoxContainer"]
 text = "Score: 0"
@@ -18,105 +18,3 @@ theme_override_font_sizes/font_size = 24
 [node name="HighScoreLabel" type="Label" parent="VBoxContainer"]
 text = "High Score: 0"
 theme_override_font_sizes/font_size = 20
-
-[node name="MenuContainer" type="CenterContainer" parent="."]
-anchors_left = 0.5
-anchors_top = 0.5
-anchors_right = 0.5
-anchors_bottom = 0.5
-offset_left = -100.0
-offset_top = -150.0
-offset_right = 100.0
-offset_bottom = 150.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MenuContainer"]
-custom_minimum_size = Vector2(200, 300)
-alignment = 1
-
-[node name="TitleLabel" type="Label" parent="MenuContainer/VBoxContainer"]
-text = "FLAPPY BIRD"
-theme_override_font_sizes/font_size = 48
-alignment = 1
-
-[node name="VSeparator1" type="VSeparator" parent="MenuContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 30)
-
-[node name="DifficultyLabel" type="Label" parent="MenuContainer/VBoxContainer"]
-text = "SELECT DIFFICULTY:"
-theme_override_font_sizes/font_size = 16
-alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MenuContainer/VBoxContainer"]
-alignment = 1
-custom_minimum_size = Vector2(0, 50)
-
-[node name="EasyButton" type="Button" parent="MenuContainer/VBoxContainer/HBoxContainer"]
-text = "EASY"
-custom_minimum_size = Vector2(50, 40)
-
-[node name="NormalButton" type="Button" parent="MenuContainer/VBoxContainer/HBoxContainer"]
-text = "NORMAL"
-custom_minimum_size = Vector2(50, 40)
-
-[node name="HardButton" type="Button" parent="MenuContainer/VBoxContainer/HBoxContainer"]
-text = "HARD"
-custom_minimum_size = Vector2(50, 40)
-
-[node name="VSeparator2" type="VSeparator" parent="MenuContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 20)
-
-[node name="InstructionLabel" type="Label" parent="MenuContainer/VBoxContainer"]
-text = "Press SPACE or Click to Start"
-theme_override_font_sizes/font_size = 14
-alignment = 1
-
-[node name="GameOverContainer" type="CenterContainer" parent="."]
-anchors_left = 0.5
-anchors_top = 0.5
-anchors_right = 0.5
-anchors_bottom = 0.5
-offset_left = -120.0
-offset_top = -150.0
-offset_right = 120.0
-offset_bottom = 150.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="GameOverContainer"]
-custom_minimum_size = Vector2(240, 300)
-alignment = 1
-
-[node name="GameOverLabel" type="Label" parent="GameOverContainer/VBoxContainer"]
-text = "GAME OVER!"
-theme_override_font_sizes/font_size = 48
-alignment = 1
-
-[node name="VSeparator1" type="VSeparator" parent="GameOverContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 30)
-
-[node name="FinalScoreLabel" type="Label" parent="GameOverContainer/VBoxContainer"]
-text = "Score: 0"
-theme_override_font_sizes/font_size = 32
-alignment = 1
-
-[node name="FinalHighScoreLabel" type="Label" parent="GameOverContainer/VBoxContainer"]
-text = "High Score: 0"
-theme_override_font_sizes/font_size = 28
-alignment = 1
-
-[node name="VSeparator2" type="VSeparator" parent="GameOverContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 20)
-
-[node name="RestartLabel" type="Label" parent="GameOverContainer/VBoxContainer"]
-text = "Press SPACE to Restart"
-theme_override_font_sizes/font_size = 14
-alignment = 1
-
-[node name="DifficultyMenu" type="PanelContainer" parent="."]
-anchors_left = 0.5
-anchors_top = 0.0
-anchors_right = 0.5
-anchors_bottom = 0.0
-offset_left = -100.0
-offset_top = 50.0
-offset_right = 100.0
-offset_bottom = 150.0
-visible = false
