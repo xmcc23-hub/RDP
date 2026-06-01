@@ -12,7 +12,6 @@ script = ExtResource("res://scenes/game_manager.gd")
 position = Vector2(100, 300)
 
 [node name="PipeSpawner" type="Node2D" parent="."]
-script = ExtResource("res://scenes/pipes/pipe_spawner.gd")
 
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2(200, 570)
